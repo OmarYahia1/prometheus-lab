@@ -46,27 +46,15 @@ Prometheus continuously scrapes metrics from both targets and stores them for mo
 
 ## Screenshots
 
-### AWS Infrastructure
-
-![EC2 Instances](screenshots/ec2-instances.png)
-
 ### Prometheus Targets
 
 ![Prometheus Targets](screenshots/prometheus-targets.png)
-
-### Node Exporter Metrics
-
-![Node Exporter](screenshots/node-exporter-metrics.png)
 
 ### Python Application
 
 ![Python App](screenshots/python-app-home.png)
 
-### Python Metrics Endpoint
 
-![Python Metrics](screenshots/python-app-metrics.png)
-
----
 
 ## Results
 
