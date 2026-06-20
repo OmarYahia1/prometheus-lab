@@ -10,9 +10,10 @@ This project demonstrates a centralized monitoring solution on AWS using:
 
 ## Architecture
 
-Place your architecture image in:
+<img width="1536" height="1024" alt="ChatGPT Image Jun 20, 2026, 01_58_35 PM" src="https://github.com/user-attachments/assets/cded1bd6-a5f9-4518-ae74-380909419228" />
 
-`diagrams/architecture-diagram.png`
+
+
 
 ## Infrastructure
 
