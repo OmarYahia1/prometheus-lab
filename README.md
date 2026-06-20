@@ -48,13 +48,11 @@ Prometheus continuously scrapes metrics from both targets and stores them for mo
 
 ### Prometheus Targets
 
-![Prometheus Targets](screenshots/prometheus-targets.png)
+<img width="1350" height="597" alt="image" src="https://github.com/user-attachments/assets/4af4970a-fcdb-4127-af69-a93867ea38b9" />
 
 ### Python Application
 
-![Python App](screenshots/python-app-home.png)
-
-
+<img width="477" height="161" alt="image" src="https://github.com/user-attachments/assets/2bfdae30-4dc4-49f8-b797-5cdc67852f3b" />
 
 ## Results
 
