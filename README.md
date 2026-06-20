@@ -1,49 +1,82 @@
-# AWS Monitoring with Prometheus, Node Exporter and Python Flask Application
+# AWS Monitoring with Prometheus
 
-## Overview
+## Project Overview
 
-This project demonstrates a centralized monitoring solution on AWS using:
+This project demonstrates a centralized monitoring solution deployed on AWS using Prometheus. The environment consists of a Prometheus server, a Node Exporter instance for infrastructure monitoring, and a Python Flask application exposing custom application metrics.
 
-- Prometheus Server (EC2-1)
-- Node Exporter (EC2-2)
-- Python Flask Application with prometheus_client (EC2-3)
+Prometheus continuously scrapes metrics from both targets and stores them for monitoring and observability purposes.
+
+---
 
 ## Architecture
 
-<img width="1536" height="1024" alt="ChatGPT Image Jun 20, 2026, 01_58_35 PM" src="https://github.com/user-attachments/assets/cded1bd6-a5f9-4518-ae74-380909419228" />
+<img width="1536" height="1024" alt="Arch" src="https://github.com/user-attachments/assets/1e22b307-3754-4780-a098-3cf79da47865" />
 
+### Components
 
+| Instance | Purpose                  | Port |
+| -------- | ------------------------ | ---- |
+| EC2-1    | Prometheus Server        | 9090 |
+| EC2-2    | Node Exporter            | 9100 |
+| EC2-3    | Python Flask Application | 5000 |
 
-
-## Infrastructure
-
-| Instance | Purpose | Port |
-|-----------|----------|------|
-| EC2-1 | Prometheus Server | 9090 |
-| EC2-2 | Node Exporter | 9100 |
-| EC2-3 | Python Flask App | 5000 |
+---
 
 ## Monitoring Flow
 
-1. Prometheus scrapes Node Exporter metrics.
-2. Prometheus scrapes Flask application metrics.
-3. Metrics are stored in Prometheus TSDB.
-4. Metrics are queried through Prometheus UI.
+1. Prometheus runs on EC2-1.
+2. Node Exporter runs on EC2-2 and exposes infrastructure metrics.
+3. Flask application runs on EC2-3 and exposes custom metrics through the `/metrics` endpoint.
+4. Prometheus scrapes both targets every 15 seconds.
+5. Metrics are stored locally in Prometheus TSDB and visualized through the Prometheus UI.
 
-## Sample Queries
+---
 
-```promql
-node_cpu_seconds_total
-```
+## Technologies Used
 
-```promql
-node_memory_MemAvailable_bytes
-```
+* AWS EC2
+* Ubuntu 24.04
+* Prometheus
+* Node Exporter
+* Python
+* Flask
+* prometheus_client
 
-```promql
-node_filesystem_avail_bytes
-```
+---
 
-```promql
-app_requests_total
-```
+## Screenshots
+
+### AWS Infrastructure
+
+![EC2 Instances](screenshots/ec2-instances.png)
+
+### Prometheus Targets
+
+![Prometheus Targets](screenshots/prometheus-targets.png)
+
+### Node Exporter Metrics
+
+![Node Exporter](screenshots/node-exporter-metrics.png)
+
+### Python Application
+
+![Python App](screenshots/python-app-home.png)
+
+### Python Metrics Endpoint
+
+![Python Metrics](screenshots/python-app-metrics.png)
+
+---
+
+## Results
+
+* Successfully deployed Prometheus on AWS.
+* Successfully monitored EC2 infrastructure metrics using Node Exporter.
+* Successfully exposed and collected custom application metrics from a Flask application.
+* Verified all monitoring targets were in the UP state.
+
+---
+
+## Author
+
+Omar Hossam
